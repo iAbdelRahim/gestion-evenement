@@ -1,0 +1,79 @@
+\hypertarget{queries_8h}{}\doxysection{queries.\+h File Reference}
+\label{queries_8h}\index{queries.h@{queries.h}}
+
+
+This file contains function declarations for performing various database queries related to users, events, sessions, tickets, places, plats, and films. It includes the My\+SQL C API library and several header files that define data structures used in the function signatures. The function declarations include in\+User, insert\+User, get\+Users, del\+User, in\+Event, insert\+Event, get\+Events, update\+Event, del\+Event, get\+Event\+Sessions, insert\+Place, insert\+Plat, in\+Session, insert\+Session, del\+Session, insert\+Ticket, insert\+Film, and get\+Films\+By\+Session\+Id. These functions allow users to interact with the database by registering, creating, modifying, and deleting events, sessions, and tickets.  
+
+
+{\ttfamily \#include $<$mysql/mysql.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}struct.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}string.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}functions.\+h\char`\"{}}\newline
+Include dependency graph for queries.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{queries_8h_aadbbb0f7df3f169c72d3c8ba121eab68}\label{queries_8h_aadbbb0f7df3f169c72d3c8ba121eab68}} 
+\mbox{\hyperlink{structuser}{User}} $\ast$ {\bfseries in\+User} ()
+\item 
+\mbox{\Hypertarget{queries_8h_af47ed23d8e3083116a49bc271808f3bd}\label{queries_8h_af47ed23d8e3083116a49bc271808f3bd}} 
+\mbox{\hyperlink{structuser}{User}} $\ast$ {\bfseries insert\+User} (MYSQL $\ast$db, \mbox{\hyperlink{structuser}{User}} $\ast$\mbox{\hyperlink{structuser}{user}})
+\item 
+\mbox{\Hypertarget{queries_8h_a6ef7e2b3cf6868680d5d40a7ce8ae0df}\label{queries_8h_a6ef7e2b3cf6868680d5d40a7ce8ae0df}} 
+void {\bfseries get\+Users} (MYSQL $\ast$db)
+\item 
+\mbox{\Hypertarget{queries_8h_a2a055aa4834a22437f7b2d249f7184e9}\label{queries_8h_a2a055aa4834a22437f7b2d249f7184e9}} 
+void {\bfseries del\+User} (MYSQL $\ast$db, int id)
+\item 
+\mbox{\Hypertarget{queries_8h_a691557e578acb0a6cb7e3329d22aa2cd}\label{queries_8h_a691557e578acb0a6cb7e3329d22aa2cd}} 
+\mbox{\hyperlink{structevent}{Event}} $\ast$ {\bfseries in\+Event} ()
+\item 
+\mbox{\Hypertarget{queries_8h_a3135464a80f75d5aa83f3c7965791913}\label{queries_8h_a3135464a80f75d5aa83f3c7965791913}} 
+\mbox{\hyperlink{structevent}{Event}} $\ast$ {\bfseries insert\+Event} (MYSQL $\ast$db, \mbox{\hyperlink{structevent}{Event}} $\ast$\mbox{\hyperlink{structevent}{event}})
+\item 
+\mbox{\Hypertarget{queries_8h_a909be0313050b43b7ecb9add0fd5b6f8}\label{queries_8h_a909be0313050b43b7ecb9add0fd5b6f8}} 
+void {\bfseries get\+Events} (MYSQL $\ast$db)
+\item 
+\mbox{\Hypertarget{queries_8h_a634345679600c3b84f6a7f16037a11d9}\label{queries_8h_a634345679600c3b84f6a7f16037a11d9}} 
+void {\bfseries update\+Event} (MYSQL $\ast$db, \mbox{\hyperlink{structevent}{Event}} $\ast$\mbox{\hyperlink{structevent}{event}})
+\item 
+\mbox{\Hypertarget{queries_8h_a56416a749f63e60d749865d19817638d}\label{queries_8h_a56416a749f63e60d749865d19817638d}} 
+void {\bfseries del\+Event} (MYSQL $\ast$db, int id)
+\item 
+\mbox{\Hypertarget{queries_8h_a82975b98a98533836611f2879079496c}\label{queries_8h_a82975b98a98533836611f2879079496c}} 
+void {\bfseries get\+Event\+Sessions} (MYSQL $\ast$db, int event\+\_\+id)
+\item 
+\mbox{\Hypertarget{queries_8h_a9888d52501af8910f512949c257896a4}\label{queries_8h_a9888d52501af8910f512949c257896a4}} 
+\mbox{\hyperlink{structplace}{Place}} $\ast$ {\bfseries insert\+Place} (MYSQL $\ast$db, \mbox{\hyperlink{structevent}{Event}} $\ast$\mbox{\hyperlink{structevent}{event}}, \mbox{\hyperlink{structplace}{Place}} $\ast$\mbox{\hyperlink{structplace}{place}})
+\item 
+\mbox{\Hypertarget{queries_8h_aae9c7524f56c9c0387efc340bb51bb2f}\label{queries_8h_aae9c7524f56c9c0387efc340bb51bb2f}} 
+\mbox{\hyperlink{structplat}{Plat}} $\ast$ {\bfseries insert\+Plat} (MYSQL $\ast$db, \mbox{\hyperlink{structevent}{Event}} $\ast$\mbox{\hyperlink{structevent}{event}}, \mbox{\hyperlink{structplat}{Plat}} $\ast$\mbox{\hyperlink{structplat}{plat}})
+\item 
+\mbox{\Hypertarget{queries_8h_af6fb21e7cddcebac6185b63b42b2f299}\label{queries_8h_af6fb21e7cddcebac6185b63b42b2f299}} 
+\mbox{\hyperlink{structsession}{Session}} $\ast$ {\bfseries in\+Session} ()
+\item 
+\mbox{\Hypertarget{queries_8h_ae2a603edb827cd804eaa1b95c603f7b3}\label{queries_8h_ae2a603edb827cd804eaa1b95c603f7b3}} 
+\mbox{\hyperlink{structsession}{Session}} $\ast$ {\bfseries insert\+Session} (MYSQL $\ast$db, \mbox{\hyperlink{structsession}{Session}} $\ast$\mbox{\hyperlink{structsession}{session}}, int eve\+\_\+id)
+\item 
+\mbox{\Hypertarget{queries_8h_a1ee62856ff6516093011a83945d83726}\label{queries_8h_a1ee62856ff6516093011a83945d83726}} 
+void {\bfseries del\+Session} (MYSQL $\ast$db, int id)
+\item 
+\mbox{\Hypertarget{queries_8h_a25da7534fd7064755e5d5f1bfc1589a9}\label{queries_8h_a25da7534fd7064755e5d5f1bfc1589a9}} 
+\mbox{\hyperlink{structticket}{Ticket}} $\ast$ {\bfseries insert\+Ticket} (MYSQL $\ast$db, \mbox{\hyperlink{structticket}{Ticket}} $\ast$\mbox{\hyperlink{structticket}{ticket}})
+\item 
+\mbox{\Hypertarget{queries_8h_af2148ae96c62cc7375b25061cae8a331}\label{queries_8h_af2148ae96c62cc7375b25061cae8a331}} 
+\mbox{\hyperlink{structfilm}{Film}} $\ast$ {\bfseries insert\+Film} (MYSQL $\ast$db, \mbox{\hyperlink{structfilm}{Film}} $\ast$\mbox{\hyperlink{structfilm}{film}})
+\item 
+\mbox{\Hypertarget{queries_8h_ae9b90643a128f9bd8dccae2f2b813c18}\label{queries_8h_ae9b90643a128f9bd8dccae2f2b813c18}} 
+\mbox{\hyperlink{structfilm}{Film}} $\ast$$\ast$ {\bfseries get\+Films\+By\+Session\+Id} (MYSQL $\ast$db, int id)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file contains function declarations for performing various database queries related to users, events, sessions, tickets, places, plats, and films. It includes the My\+SQL C API library and several header files that define data structures used in the function signatures. The function declarations include in\+User, insert\+User, get\+Users, del\+User, in\+Event, insert\+Event, get\+Events, update\+Event, del\+Event, get\+Event\+Sessions, insert\+Place, insert\+Plat, in\+Session, insert\+Session, del\+Session, insert\+Ticket, insert\+Film, and get\+Films\+By\+Session\+Id. These functions allow users to interact with the database by registering, creating, modifying, and deleting events, sessions, and tickets. 
+

@@ -1,0 +1,226 @@
+\hypertarget{functions_8h}{}\doxysection{functions.\+h File Reference}
+\label{functions_8h}\index{functions.h@{functions.h}}
+
+
+Définition des fonctions principales du programme de gestion d\textquotesingle{}événements. Ce fichier contient la définition des fonctions principales du programme de gestion d\textquotesingle{}événements. Ces fonctions sont responsables de la création et de la gestion des événements, des sessions, des billets, des plats et des places. Il contient également une fonction permettant de lier des films à une session.  
+
+
+{\ttfamily \#include \char`\"{}struct.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+Include dependency graph for functions.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structevent}{Event}} $\ast$ \mbox{\hyperlink{functions_8h_a3baf7fd4337253d8f3171fbfb8823279}{plat\+Event}} (\mbox{\hyperlink{structplat}{Plat}} $\ast$\mbox{\hyperlink{structplat}{plat}}, \mbox{\hyperlink{structevent}{Event}} $\ast$\mbox{\hyperlink{structevent}{event}})
+\begin{DoxyCompactList}\small\item\em Ajoute un plat à un événement. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structevent}{Event}} $\ast$ \mbox{\hyperlink{functions_8h_af2594031e47f5b473dad27d0163fc928}{place\+Event}} (\mbox{\hyperlink{structplace}{Place}} $\ast$\mbox{\hyperlink{structplace}{place}}, \mbox{\hyperlink{structevent}{Event}} $\ast$\mbox{\hyperlink{structevent}{event}})
+\begin{DoxyCompactList}\small\item\em Ajoute une place à un événement. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structevent}{Event}} $\ast$ \mbox{\hyperlink{functions_8h_aa466c2712a37ae480cd48e5285de20ee}{ticket\+Event}} (\mbox{\hyperlink{structticket}{Ticket}} $\ast$\mbox{\hyperlink{structticket}{ticket}}, \mbox{\hyperlink{structevent}{Event}} $\ast$\mbox{\hyperlink{structevent}{event}})
+\begin{DoxyCompactList}\small\item\em Ajoute un billet à un événement. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structsession}{Session}} $\ast$ \mbox{\hyperlink{functions_8h_a1bdad3c7a7d66ef07ad526ad6e6a385c}{film\+Session}} (\mbox{\hyperlink{structfilm}{Film}} $\ast$\mbox{\hyperlink{structfilm}{film}}, \mbox{\hyperlink{structsession}{Session}} $\ast$\mbox{\hyperlink{structsession}{session}})
+\begin{DoxyCompactList}\small\item\em Ajoute un film à une session. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structevent}{Event}} $\ast$ \mbox{\hyperlink{functions_8h_a6378a66bb563a9834664a4d724979878}{session\+Event}} (\mbox{\hyperlink{structsession}{Session}} $\ast$\mbox{\hyperlink{structsession}{session}}, \mbox{\hyperlink{structevent}{Event}} $\ast$\mbox{\hyperlink{structevent}{event}})
+\begin{DoxyCompactList}\small\item\em Ajoute une session à un événement. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{functions_8h_af92250c14853b46a329450510f33110e}{link\+Films\+To\+Session}} (\mbox{\hyperlink{structsession}{Session}} $\ast$\mbox{\hyperlink{structsession}{session}}, int nb\+Films, \mbox{\hyperlink{structfilm}{Film}} $\ast$films\mbox{[}100\mbox{]})
+\begin{DoxyCompactList}\small\item\em Lie des films à une session. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Définition des fonctions principales du programme de gestion d\textquotesingle{}événements. Ce fichier contient la définition des fonctions principales du programme de gestion d\textquotesingle{}événements. Ces fonctions sont responsables de la création et de la gestion des événements, des sessions, des billets, des plats et des places. Il contient également une fonction permettant de lier des films à une session. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{functions_8h_a1bdad3c7a7d66ef07ad526ad6e6a385c}\label{functions_8h_a1bdad3c7a7d66ef07ad526ad6e6a385c}} 
+\index{functions.h@{functions.h}!filmSession@{filmSession}}
+\index{filmSession@{filmSession}!functions.h@{functions.h}}
+\doxysubsubsection{\texorpdfstring{filmSession()}{filmSession()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structsession}{Session}}$\ast$ film\+Session (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structfilm}{Film}} $\ast$}]{film,  }\item[{\mbox{\hyperlink{structsession}{Session}} $\ast$}]{session }\end{DoxyParamCaption})}
+
+
+
+Ajoute un film à une session. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em film} & Le film à ajouter. \\
+\hline
+{\em session} & La session à laquelle ajouter le film. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+La session modifiée.
+\end{DoxyReturn}
+Ajoute un film à une session.
+
+
+\begin{DoxyParams}{Parameters}
+{\em film} & Le film à ajouter à la session \\
+\hline
+{\em session} & La session concernée \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Un pointeur vers la session mise à jour avec le nouveau film ajouté 
+\end{DoxyReturn}
+\mbox{\Hypertarget{functions_8h_af92250c14853b46a329450510f33110e}\label{functions_8h_af92250c14853b46a329450510f33110e}} 
+\index{functions.h@{functions.h}!linkFilmsToSession@{linkFilmsToSession}}
+\index{linkFilmsToSession@{linkFilmsToSession}!functions.h@{functions.h}}
+\doxysubsubsection{\texorpdfstring{linkFilmsToSession()}{linkFilmsToSession()}}
+{\footnotesize\ttfamily void link\+Films\+To\+Session (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structsession}{Session}} $\ast$}]{session,  }\item[{int}]{nb\+Films,  }\item[{\mbox{\hyperlink{structfilm}{Film}} $\ast$}]{films\mbox{[}100\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Lie des films à une session. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em session} & La session à laquelle lier les films. \\
+\hline
+{\em nb\+Films} & Le nombre de films disponibles. \\
+\hline
+{\em films} & Un tableau contenant les films disponibles.\\
+\hline
+\end{DoxyParams}
+Lie des films à une session.
+
+
+\begin{DoxyParams}{Parameters}
+{\em session} & La session à laquelle lier les films \\
+\hline
+{\em nb\+Films} & Le nombre total de films disponibles \\
+\hline
+{\em films} & Le tableau de pointeurs de films disponibles \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{functions_8h_af2594031e47f5b473dad27d0163fc928}\label{functions_8h_af2594031e47f5b473dad27d0163fc928}} 
+\index{functions.h@{functions.h}!placeEvent@{placeEvent}}
+\index{placeEvent@{placeEvent}!functions.h@{functions.h}}
+\doxysubsubsection{\texorpdfstring{placeEvent()}{placeEvent()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structevent}{Event}}$\ast$ place\+Event (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structplace}{Place}} $\ast$}]{place,  }\item[{\mbox{\hyperlink{structevent}{Event}} $\ast$}]{event }\end{DoxyParamCaption})}
+
+
+
+Ajoute une place à un événement. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em place} & La place à ajouter. \\
+\hline
+{\em event} & L\textquotesingle{}événement auquel ajouter la place. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+L\textquotesingle{}événement modifié.
+\end{DoxyReturn}
+Ajoute une place à un événement.
+
+
+\begin{DoxyParams}{Parameters}
+{\em place} & La place à ajouter à l\textquotesingle{}événement \\
+\hline
+{\em event} & L\textquotesingle{}événement concerné \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Un pointeur vers l\textquotesingle{}événement mis à jour avec la nouvelle place ajoutée 
+\end{DoxyReturn}
+\mbox{\Hypertarget{functions_8h_a3baf7fd4337253d8f3171fbfb8823279}\label{functions_8h_a3baf7fd4337253d8f3171fbfb8823279}} 
+\index{functions.h@{functions.h}!platEvent@{platEvent}}
+\index{platEvent@{platEvent}!functions.h@{functions.h}}
+\doxysubsubsection{\texorpdfstring{platEvent()}{platEvent()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structevent}{Event}}$\ast$ plat\+Event (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structplat}{Plat}} $\ast$}]{plat,  }\item[{\mbox{\hyperlink{structevent}{Event}} $\ast$}]{event }\end{DoxyParamCaption})}
+
+
+
+Ajoute un plat à un événement. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em plat} & Le plat à ajouter. \\
+\hline
+{\em event} & L\textquotesingle{}événement auquel ajouter le plat. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+L\textquotesingle{}événement modifié.
+\end{DoxyReturn}
+Ajoute un plat à un événement.
+
+
+\begin{DoxyParams}{Parameters}
+{\em plat} & Le plat à ajouter à l\textquotesingle{}événement \\
+\hline
+{\em event} & L\textquotesingle{}événement concerné \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Un pointeur vers l\textquotesingle{}événement mis à jour avec le nouveau plat ajouté 
+\end{DoxyReturn}
+\mbox{\Hypertarget{functions_8h_a6378a66bb563a9834664a4d724979878}\label{functions_8h_a6378a66bb563a9834664a4d724979878}} 
+\index{functions.h@{functions.h}!sessionEvent@{sessionEvent}}
+\index{sessionEvent@{sessionEvent}!functions.h@{functions.h}}
+\doxysubsubsection{\texorpdfstring{sessionEvent()}{sessionEvent()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structevent}{Event}}$\ast$ session\+Event (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structsession}{Session}} $\ast$}]{session,  }\item[{\mbox{\hyperlink{structevent}{Event}} $\ast$}]{event }\end{DoxyParamCaption})}
+
+
+
+Ajoute une session à un événement. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em session} & La session à ajouter. \\
+\hline
+{\em event} & L\textquotesingle{}événement auquel ajouter la session. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+L\textquotesingle{}événement modifié.
+\end{DoxyReturn}
+Ajoute une session à un événement.
+
+
+\begin{DoxyParams}{Parameters}
+{\em session} & La session à ajouter à l\textquotesingle{}événement \\
+\hline
+{\em event} & L\textquotesingle{}événement concerné \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Un pointeur vers l\textquotesingle{}événement mis à jour avec la nouvelle session ajoutée 
+\end{DoxyReturn}
+\mbox{\Hypertarget{functions_8h_aa466c2712a37ae480cd48e5285de20ee}\label{functions_8h_aa466c2712a37ae480cd48e5285de20ee}} 
+\index{functions.h@{functions.h}!ticketEvent@{ticketEvent}}
+\index{ticketEvent@{ticketEvent}!functions.h@{functions.h}}
+\doxysubsubsection{\texorpdfstring{ticketEvent()}{ticketEvent()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structevent}{Event}}$\ast$ ticket\+Event (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structticket}{Ticket}} $\ast$}]{ticket,  }\item[{\mbox{\hyperlink{structevent}{Event}} $\ast$}]{event }\end{DoxyParamCaption})}
+
+
+
+Ajoute un billet à un événement. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ticket} & Le billet à ajouter. \\
+\hline
+{\em event} & L\textquotesingle{}événement auquel ajouter le billet. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+L\textquotesingle{}événement modifié.
+\end{DoxyReturn}
+Ajoute un billet à un événement.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ticket} & Le ticket à ajouter à l\textquotesingle{}événement \\
+\hline
+{\em event} & L\textquotesingle{}événement concerné \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Un pointeur vers l\textquotesingle{}événement mis à jour avec le nouveau ticket ajouté 
+\end{DoxyReturn}

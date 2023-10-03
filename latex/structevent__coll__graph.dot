@@ -1,0 +1,29 @@
+digraph "event"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="event",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" places" ];
+  Node2 [label="place",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structplace.html",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" event" ];
+  Node3 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" user" ];
+  Node3 [label="user",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structuser.html",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" places" ];
+  Node4 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" tickets" ];
+  Node4 [label="ticket",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structticket.html",tooltip=" "];
+  Node1 -> Node4 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" event" ];
+  Node3 -> Node4 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" user" ];
+  Node5 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" plats" ];
+  Node5 [label="plat",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structplat.html",tooltip=" "];
+  Node1 -> Node5 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" event" ];
+  Node3 -> Node5 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" user" ];
+  Node6 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" sessions" ];
+  Node6 [label="session",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structsession.html",tooltip=" "];
+  Node7 -> Node6 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" films" ];
+  Node7 [label="film",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structfilm.html",tooltip=" "];
+  Node6 -> Node7 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" session" ];
+  Node1 -> Node6 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" event" ];
+  Node4 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" tickets" ];
+  Node5 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" plats" ];
+}

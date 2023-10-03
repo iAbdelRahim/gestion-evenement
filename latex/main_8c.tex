@@ -1,0 +1,83 @@
+\hypertarget{main_8c}{}\doxysection{main.\+c File Reference}
+\label{main_8c}\index{main.c@{main.c}}
+
+
+Ceci est le fichier principal pour le programme de gestion d\textquotesingle{}événements. Ce programme permet aux utilisateurs de se connecter au système, de s\textquotesingle{}inscrire et d\textquotesingle{}effectuer diverses actions telles que la création, la modification ou la suppression d\textquotesingle{}événements. Les administrateurs peuvent se connecter pour accéder au tableau de bord et effectuer des tâches administratives supplémentaires. Le programme se connecte à une base de données My\+SQL pour stocker et récupérer des données.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$mysql/mysql.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}struct.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}queries.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}admin.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}user.\+h\char`\"{}}\newline
+Include dependency graph for main.\+c\+:
+% FIG 0
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{main_8c_a1582fcab54a90e3b567d5a0ab050cd84}{connexion\+Admin}} (MYSQL $\ast$db)
+\begin{DoxyCompactList}\small\item\em Permet à un administrateur de se connecter au système Invite l\textquotesingle{}administrateur à entrer son adresse e-\/mail et son mot de passe. Si les identifiants correspondent aux valeurs codées en dur, la fonction appelle la fonction tableau de bord pour afficher le menu administrateur et renvoie 1. Sinon, elle affiche un message d\textquotesingle{}erreur et renvoie 0. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structuser}{User}} $\ast$ \mbox{\hyperlink{main_8c_a624bd3d5b52e99c6e03fe86bbc2c072b}{connexion}} (MYSQL $\ast$db)
+\begin{DoxyCompactList}\small\item\em Permet à un utilisateur de se connecter au système Demande à l\textquotesingle{}utilisateur de saisir son adresse e-\/mail et son mot de passe. La fonction construit une requête pour sélectionner l\textquotesingle{}utilisateur avec l\textquotesingle{}adresse e-\/mail et le mot de passe donnés dans la base de données. Si une ligne est retournée, la fonction crée une nouvelle structure User et remplit ses champs avec les données de la ligne, puis affiche un message de succès et renvoie un pointeur vers User. Si aucune ligne n\textquotesingle{}est retournée, la fonction affiche un message d\textquotesingle{}erreur et renvoie NULL. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\begin{DoxyCompactList}\small\item\em Fonction principale Initialise une connexion à une base de données My\+SQL, affiche un menu à l\textquotesingle{}utilisateur et exécute les actions appropriées en fonction de l\textquotesingle{}entrée de l\textquotesingle{}utilisateur. Le programme continue d\textquotesingle{}afficher le menu jusqu\textquotesingle{}à ce que l\textquotesingle{}utilisateur choisisse de quitter. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Ceci est le fichier principal pour le programme de gestion d\textquotesingle{}événements. Ce programme permet aux utilisateurs de se connecter au système, de s\textquotesingle{}inscrire et d\textquotesingle{}effectuer diverses actions telles que la création, la modification ou la suppression d\textquotesingle{}événements. Les administrateurs peuvent se connecter pour accéder au tableau de bord et effectuer des tâches administratives supplémentaires. Le programme se connecte à une base de données My\+SQL pour stocker et récupérer des données. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{main_8c_a624bd3d5b52e99c6e03fe86bbc2c072b}\label{main_8c_a624bd3d5b52e99c6e03fe86bbc2c072b}} 
+\index{main.c@{main.c}!connexion@{connexion}}
+\index{connexion@{connexion}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{connexion()}{connexion()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structuser}{User}}$\ast$ connexion (\begin{DoxyParamCaption}\item[{MYSQL $\ast$}]{db }\end{DoxyParamCaption})}
+
+
+
+Permet à un utilisateur de se connecter au système Demande à l\textquotesingle{}utilisateur de saisir son adresse e-\/mail et son mot de passe. La fonction construit une requête pour sélectionner l\textquotesingle{}utilisateur avec l\textquotesingle{}adresse e-\/mail et le mot de passe donnés dans la base de données. Si une ligne est retournée, la fonction crée une nouvelle structure User et remplit ses champs avec les données de la ligne, puis affiche un message de succès et renvoie un pointeur vers User. Si aucune ligne n\textquotesingle{}est retournée, la fonction affiche un message d\textquotesingle{}erreur et renvoie NULL. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em db} & Un pointeur vers la connexion à la base de données My\+SQL \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Un pointeur vers une structure User si l\textquotesingle{}utilisateur se connecte avec succès, NULL sinon 
+\end{DoxyReturn}
+\mbox{\Hypertarget{main_8c_a1582fcab54a90e3b567d5a0ab050cd84}\label{main_8c_a1582fcab54a90e3b567d5a0ab050cd84}} 
+\index{main.c@{main.c}!connexionAdmin@{connexionAdmin}}
+\index{connexionAdmin@{connexionAdmin}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{connexionAdmin()}{connexionAdmin()}}
+{\footnotesize\ttfamily int connexion\+Admin (\begin{DoxyParamCaption}\item[{MYSQL $\ast$}]{db }\end{DoxyParamCaption})}
+
+
+
+Permet à un administrateur de se connecter au système Invite l\textquotesingle{}administrateur à entrer son adresse e-\/mail et son mot de passe. Si les identifiants correspondent aux valeurs codées en dur, la fonction appelle la fonction tableau de bord pour afficher le menu administrateur et renvoie 1. Sinon, elle affiche un message d\textquotesingle{}erreur et renvoie 0. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em db} & Un pointeur vers la connexion à la base de données My\+SQL \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 si l\textquotesingle{}administrateur se connecte avec succès, 0 sinone 
+\end{DoxyReturn}
+\mbox{\Hypertarget{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{main_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{main.c@{main.c}!main@{main}}
+\index{main@{main}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Fonction principale Initialise une connexion à une base de données My\+SQL, affiche un menu à l\textquotesingle{}utilisateur et exécute les actions appropriées en fonction de l\textquotesingle{}entrée de l\textquotesingle{}utilisateur. Le programme continue d\textquotesingle{}afficher le menu jusqu\textquotesingle{}à ce que l\textquotesingle{}utilisateur choisisse de quitter. 
+
+\begin{DoxyReturn}{Returns}
+0 en cas d\textquotesingle{}exécution réussie du programme. 
+\end{DoxyReturn}

@@ -1,0 +1,175 @@
+\hypertarget{user_8h}{}\doxysection{user.\+h File Reference}
+\label{user_8h}\index{user.h@{user.h}}
+
+
+Fichier d\textquotesingle{}en-\/tête pour les fonctions et structures liées à l\textquotesingle{}utilisateur. Ce fichier contient les déclarations de fonctions qui gèrent les opérations liées à l\textquotesingle{}utilisateur, telles que la récupération de films, la réservation de billets, l\textquotesingle{}affichage de billets et la création de mariages. Il inclut également les en-\/têtes et les structures nécessaires.  
+
+
+{\ttfamily \#include $<$mysql/mysql.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}struct.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}queries.\+h\char`\"{}}\newline
+Include dependency graph for user.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{user_8h_acf60539ab707439d88bc60eb9f64369d}{generer\+Numero\+Ticket}} ()
+\begin{DoxyCompactList}\small\item\em Génère un numéro de ticket aléatoire entre 1000 et 9999 inclus. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{user_8h_a59f5fbfd8cecbbd40ccbbf20cb95a782}{get\+Films}} (MYSQL $\ast$db)
+\begin{DoxyCompactList}\small\item\em Affiche la liste des films disponibles dans la base de données et leurs détails. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{user_8h_aa54d00bf007ff5a9ba3c7819e0072723}{existe\+Film}} (MYSQL $\ast$db, int id)
+\begin{DoxyCompactList}\small\item\em Vérifie si un film donné existe dans la base de données. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{user_8h_a0cb261681212252ea577f67d153a7b8f}{reserver\+Film}} (MYSQL $\ast$db, int user\+Id)
+\begin{DoxyCompactList}\small\item\em Permet à un utilisateur de réserver un film en entrant son identifiant dans la base de données. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{user_8h_a6b4a6dc50307637ecd9cd700e759ac77}{afficher\+Tickets}} (MYSQL $\ast$db, int user\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Affiche la liste des tickets de l\textquotesingle{}utilisateur donné en paramètre. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{user_8h_ab54a653e0295f38cbc524a0dc031ee54}{get\+User\+Events}} (MYSQL $\ast$db, int user\+Id)
+\begin{DoxyCompactList}\small\item\em Obtient tous les événements d\textquotesingle{}un utilisateur à partir de son identifiant. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{user_8h_ab8aca6a43507b3b00fc1f56f401c7990}{creer\+Mariage}} (MYSQL $\ast$db)
+\begin{DoxyCompactList}\small\item\em Permet à l\textquotesingle{}utilisateur de créer un mariage. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{user_8h_a898b62d79a711b226fcae9b14f69d936}{user\+Interface}} (MYSQL $\ast$db, \mbox{\hyperlink{structuser}{User}} $\ast$\mbox{\hyperlink{structuser}{user}})
+\begin{DoxyCompactList}\small\item\em Interface utilisateur pour les fonctionnalités. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Fichier d\textquotesingle{}en-\/tête pour les fonctions et structures liées à l\textquotesingle{}utilisateur. Ce fichier contient les déclarations de fonctions qui gèrent les opérations liées à l\textquotesingle{}utilisateur, telles que la récupération de films, la réservation de billets, l\textquotesingle{}affichage de billets et la création de mariages. Il inclut également les en-\/têtes et les structures nécessaires. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{user_8h_a6b4a6dc50307637ecd9cd700e759ac77}\label{user_8h_a6b4a6dc50307637ecd9cd700e759ac77}} 
+\index{user.h@{user.h}!afficherTickets@{afficherTickets}}
+\index{afficherTickets@{afficherTickets}!user.h@{user.h}}
+\doxysubsubsection{\texorpdfstring{afficherTickets()}{afficherTickets()}}
+{\footnotesize\ttfamily void afficher\+Tickets (\begin{DoxyParamCaption}\item[{MYSQL $\ast$}]{db,  }\item[{int}]{user\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Affiche la liste des tickets de l\textquotesingle{}utilisateur donné en paramètre. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em db} & Un pointeur vers la structure de la base de données. \\
+\hline
+{\em user\+\_\+id} & L\textquotesingle{}identifiant de l\textquotesingle{}utilisateur. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{user_8h_ab8aca6a43507b3b00fc1f56f401c7990}\label{user_8h_ab8aca6a43507b3b00fc1f56f401c7990}} 
+\index{user.h@{user.h}!creerMariage@{creerMariage}}
+\index{creerMariage@{creerMariage}!user.h@{user.h}}
+\doxysubsubsection{\texorpdfstring{creerMariage()}{creerMariage()}}
+{\footnotesize\ttfamily void creer\+Mariage (\begin{DoxyParamCaption}\item[{MYSQL $\ast$}]{db }\end{DoxyParamCaption})}
+
+
+
+Permet à l\textquotesingle{}utilisateur de créer un mariage. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em db} & Pointeur vers la connexion My\+SQL. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{user_8h_aa54d00bf007ff5a9ba3c7819e0072723}\label{user_8h_aa54d00bf007ff5a9ba3c7819e0072723}} 
+\index{user.h@{user.h}!existeFilm@{existeFilm}}
+\index{existeFilm@{existeFilm}!user.h@{user.h}}
+\doxysubsubsection{\texorpdfstring{existeFilm()}{existeFilm()}}
+{\footnotesize\ttfamily int existe\+Film (\begin{DoxyParamCaption}\item[{MYSQL $\ast$}]{db,  }\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Vérifie si un film donné existe dans la base de données. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em db} & un pointeur vers la base de données My\+SQL \\
+\hline
+{\em id} & l\textquotesingle{}identifiant du film à rechercher \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 si le film existe, 0 sinon 
+\end{DoxyReturn}
+\mbox{\Hypertarget{user_8h_acf60539ab707439d88bc60eb9f64369d}\label{user_8h_acf60539ab707439d88bc60eb9f64369d}} 
+\index{user.h@{user.h}!genererNumeroTicket@{genererNumeroTicket}}
+\index{genererNumeroTicket@{genererNumeroTicket}!user.h@{user.h}}
+\doxysubsubsection{\texorpdfstring{genererNumeroTicket()}{genererNumeroTicket()}}
+{\footnotesize\ttfamily int generer\+Numero\+Ticket (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Génère un numéro de ticket aléatoire entre 1000 et 9999 inclus. 
+
+\begin{DoxyReturn}{Returns}
+le numéro de ticket généré 
+\end{DoxyReturn}
+\mbox{\Hypertarget{user_8h_a59f5fbfd8cecbbd40ccbbf20cb95a782}\label{user_8h_a59f5fbfd8cecbbd40ccbbf20cb95a782}} 
+\index{user.h@{user.h}!getFilms@{getFilms}}
+\index{getFilms@{getFilms}!user.h@{user.h}}
+\doxysubsubsection{\texorpdfstring{getFilms()}{getFilms()}}
+{\footnotesize\ttfamily void get\+Films (\begin{DoxyParamCaption}\item[{MYSQL $\ast$}]{db }\end{DoxyParamCaption})}
+
+
+
+Affiche la liste des films disponibles dans la base de données et leurs détails. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em db} & un pointeur vers la base de données My\+SQL \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{user_8h_ab54a653e0295f38cbc524a0dc031ee54}\label{user_8h_ab54a653e0295f38cbc524a0dc031ee54}} 
+\index{user.h@{user.h}!getUserEvents@{getUserEvents}}
+\index{getUserEvents@{getUserEvents}!user.h@{user.h}}
+\doxysubsubsection{\texorpdfstring{getUserEvents()}{getUserEvents()}}
+{\footnotesize\ttfamily void get\+User\+Events (\begin{DoxyParamCaption}\item[{MYSQL $\ast$}]{db,  }\item[{int}]{user\+Id }\end{DoxyParamCaption})}
+
+
+
+Obtient tous les événements d\textquotesingle{}un utilisateur à partir de son identifiant. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em db} & Pointeur vers la connexion My\+SQL. \\
+\hline
+{\em user\+Id} & Identifiant de l\textquotesingle{}utilisateur. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{user_8h_a0cb261681212252ea577f67d153a7b8f}\label{user_8h_a0cb261681212252ea577f67d153a7b8f}} 
+\index{user.h@{user.h}!reserverFilm@{reserverFilm}}
+\index{reserverFilm@{reserverFilm}!user.h@{user.h}}
+\doxysubsubsection{\texorpdfstring{reserverFilm()}{reserverFilm()}}
+{\footnotesize\ttfamily void reserver\+Film (\begin{DoxyParamCaption}\item[{MYSQL $\ast$}]{db,  }\item[{int}]{user\+Id }\end{DoxyParamCaption})}
+
+
+
+Permet à un utilisateur de réserver un film en entrant son identifiant dans la base de données. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em db} & un pointeur vers la base de données My\+SQL \\
+\hline
+{\em user\+Id} & l\textquotesingle{}identifiant de l\textquotesingle{}utilisateur qui souhaite réserver le film \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{user_8h_a898b62d79a711b226fcae9b14f69d936}\label{user_8h_a898b62d79a711b226fcae9b14f69d936}} 
+\index{user.h@{user.h}!userInterface@{userInterface}}
+\index{userInterface@{userInterface}!user.h@{user.h}}
+\doxysubsubsection{\texorpdfstring{userInterface()}{userInterface()}}
+{\footnotesize\ttfamily void user\+Interface (\begin{DoxyParamCaption}\item[{MYSQL $\ast$}]{db,  }\item[{\mbox{\hyperlink{structuser}{User}} $\ast$}]{user }\end{DoxyParamCaption})}
+
+
+
+Interface utilisateur pour les fonctionnalités. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em db} & Pointeur vers la connexion My\+SQL. \\
+\hline
+{\em user} & Pointeur vers l\textquotesingle{}utilisateur connecté. \\
+\hline
+\end{DoxyParams}

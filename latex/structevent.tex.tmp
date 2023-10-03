@@ -1,0 +1,53 @@
+\hypertarget{structevent}{}\doxysection{event Struct Reference}
+\label{structevent}\index{event@{event}}
+
+
+Collaboration diagram for event\+:
+% FIG 0
+\doxysubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structevent_a7441ef0865bcb3db9b8064dd7375c1ea}\label{structevent_a7441ef0865bcb3db9b8064dd7375c1ea}} 
+int {\bfseries id}
+\item 
+\mbox{\Hypertarget{structevent_af0862597588e7b5f7cfbee210d54a117}\label{structevent_af0862597588e7b5f7cfbee210d54a117}} 
+char {\bfseries type} \mbox{[}255\mbox{]}
+\item 
+\mbox{\Hypertarget{structevent_a815695ac3845cfb50bd37bfc25f4249f}\label{structevent_a815695ac3845cfb50bd37bfc25f4249f}} 
+char {\bfseries lieu} \mbox{[}255\mbox{]}
+\item 
+\mbox{\Hypertarget{structevent_a732e2481b890cdfb3d0d37946f636be7}\label{structevent_a732e2481b890cdfb3d0d37946f636be7}} 
+char {\bfseries date} \mbox{[}255\mbox{]}
+\item 
+\mbox{\Hypertarget{structevent_ace574882c0ef161f0b9356cb330c4bbc}\label{structevent_ace574882c0ef161f0b9356cb330c4bbc}} 
+char {\bfseries label} \mbox{[}255\mbox{]}
+\item 
+\mbox{\Hypertarget{structevent_a83a7405ba52e0aa4275eb8b09daa9501}\label{structevent_a83a7405ba52e0aa4275eb8b09daa9501}} 
+int {\bfseries n\+Plat}
+\item 
+\mbox{\Hypertarget{structevent_a489752c928f8e184e7775d0e1074e726}\label{structevent_a489752c928f8e184e7775d0e1074e726}} 
+int {\bfseries n\+Ticket}
+\item 
+\mbox{\Hypertarget{structevent_a9cdc8e94cb039e1efd7adf1779e1b0ef}\label{structevent_a9cdc8e94cb039e1efd7adf1779e1b0ef}} 
+int {\bfseries n\+Place}
+\item 
+\mbox{\Hypertarget{structevent_abc851409db09a54cdd19d172e22dbf5a}\label{structevent_abc851409db09a54cdd19d172e22dbf5a}} 
+int {\bfseries n\+Session}
+\item 
+\mbox{\Hypertarget{structevent_a49b82e8eeff194b43b9edf0a4669b1c5}\label{structevent_a49b82e8eeff194b43b9edf0a4669b1c5}} 
+\mbox{\hyperlink{structsession}{Session}} $\ast$$\ast$ {\bfseries sessions}
+\item 
+\mbox{\Hypertarget{structevent_ae9ef1feb61c7ea0a85ff9979b5d7a66c}\label{structevent_ae9ef1feb61c7ea0a85ff9979b5d7a66c}} 
+\mbox{\hyperlink{structticket}{Ticket}} $\ast$$\ast$ {\bfseries tickets}
+\item 
+\mbox{\Hypertarget{structevent_ad9d81e12493969842561781398d6950c}\label{structevent_ad9d81e12493969842561781398d6950c}} 
+\mbox{\hyperlink{structplace}{Place}} $\ast$$\ast$ {\bfseries places}
+\item 
+\mbox{\Hypertarget{structevent_a84fbe71140ed65bc4590a30f74411604}\label{structevent_a84fbe71140ed65bc4590a30f74411604}} 
+\mbox{\hyperlink{structplat}{Plat}} $\ast$$\ast$ {\bfseries plats}
+\end{DoxyCompactItemize}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+struct.\+h\end{DoxyCompactItemize}

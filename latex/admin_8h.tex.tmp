@@ -1,0 +1,127 @@
+\hypertarget{admin_8h}{}\doxysection{admin.\+h File Reference}
+\label{admin_8h}\index{admin.h@{admin.h}}
+
+
+Fichier d\textquotesingle{}en-\/tête contenant les déclarations de fonctions pour la gestion des événements, sessions et utilisateurs Ce fichier contient les déclarations de fonctions pour la gestion des événements, sessions et utilisateurs en tant qu\textquotesingle{}administrateur. Ces fonctions sont implémentées dans admin.\+c et dépendent des fichiers d\textquotesingle{}en-\/tête suivants\+: \mbox{\hyperlink{struct_8h}{struct.\+h}}, input.\+h et \mbox{\hyperlink{queries_8h}{queries.\+h}}.  
+
+
+{\ttfamily \#include \char`\"{}struct.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}queries.\+h\char`\"{}}\newline
+Include dependency graph for admin.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{admin_8h_ade80f6a9fa9a7434197dd029470273c1}{manage\+Sessions}} (MYSQL $\ast$db, int event\+Id)
+\begin{DoxyCompactList}\small\item\em Gère les sessions d\textquotesingle{}un événement donné Cette fonction permet à l\textquotesingle{}administrateur de gérer les sessions d\textquotesingle{}un événement donné, notamment en ajoutant et en supprimant des sessions. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{admin_8h_ab4f56d7c6616a33072aeb98273aef206}{manage\+Event}} (MYSQL $\ast$db)
+\begin{DoxyCompactList}\small\item\em Gère les événements Cette fonction permet à l\textquotesingle{}administrateur de gérer les événements, y compris leur ajout, modification, suppression et consultation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{admin_8h_a5d253add4c386f6f34c8531c9ab71740}{manage\+User}} (MYSQL $\ast$db)
+\begin{DoxyCompactList}\small\item\em Gère les utilisateurs Cette fonction permet à l\textquotesingle{}administrateur de gérer les utilisateurs, notamment en les ajoutant et en les supprimant. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{admin_8h_aa0343645a7838d59f54059c73881040a}{dashboard}} (MYSQL $\ast$db)
+\begin{DoxyCompactList}\small\item\em Affiche le tableau de bord Cette fonction affiche le tableau de bord avec les options pour gérer les utilisateurs, les événements et afficher les statistiques. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Fichier d\textquotesingle{}en-\/tête contenant les déclarations de fonctions pour la gestion des événements, sessions et utilisateurs Ce fichier contient les déclarations de fonctions pour la gestion des événements, sessions et utilisateurs en tant qu\textquotesingle{}administrateur. Ces fonctions sont implémentées dans admin.\+c et dépendent des fichiers d\textquotesingle{}en-\/tête suivants\+: \mbox{\hyperlink{struct_8h}{struct.\+h}}, input.\+h et \mbox{\hyperlink{queries_8h}{queries.\+h}}. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{admin_8h_aa0343645a7838d59f54059c73881040a}\label{admin_8h_aa0343645a7838d59f54059c73881040a}} 
+\index{admin.h@{admin.h}!dashboard@{dashboard}}
+\index{dashboard@{dashboard}!admin.h@{admin.h}}
+\doxysubsubsection{\texorpdfstring{dashboard()}{dashboard()}}
+{\footnotesize\ttfamily void dashboard (\begin{DoxyParamCaption}\item[{MYSQL $\ast$}]{db }\end{DoxyParamCaption})}
+
+
+
+Affiche le tableau de bord Cette fonction affiche le tableau de bord avec les options pour gérer les utilisateurs, les événements et afficher les statistiques. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em db} & L\textquotesingle{}objet de connexion My\+SQL\\
+\hline
+\end{DoxyParams}
+Affiche le tableau de bord Cette fonction affiche le tableau de bord avec les options pour gérer les utilisateurs, les événements et afficher les statistiques.
+
+
+\begin{DoxyParams}{Parameters}
+{\em db} & un pointeur vers la base de données MYSQL à utiliser pour l\textquotesingle{}application \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{admin_8h_ab4f56d7c6616a33072aeb98273aef206}\label{admin_8h_ab4f56d7c6616a33072aeb98273aef206}} 
+\index{admin.h@{admin.h}!manageEvent@{manageEvent}}
+\index{manageEvent@{manageEvent}!admin.h@{admin.h}}
+\doxysubsubsection{\texorpdfstring{manageEvent()}{manageEvent()}}
+{\footnotesize\ttfamily void manage\+Event (\begin{DoxyParamCaption}\item[{MYSQL $\ast$}]{db }\end{DoxyParamCaption})}
+
+
+
+Gère les événements Cette fonction permet à l\textquotesingle{}administrateur de gérer les événements, y compris leur ajout, modification, suppression et consultation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em db} & L\textquotesingle{}objet de connexion My\+SQL\\
+\hline
+\end{DoxyParams}
+Gère les événements Cette fonction permet à l\textquotesingle{}administrateur de gérer les événements, y compris leur ajout, modification, suppression et consultation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em db} & Pointeur vers la base de données MYSQL. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{admin_8h_ade80f6a9fa9a7434197dd029470273c1}\label{admin_8h_ade80f6a9fa9a7434197dd029470273c1}} 
+\index{admin.h@{admin.h}!manageSessions@{manageSessions}}
+\index{manageSessions@{manageSessions}!admin.h@{admin.h}}
+\doxysubsubsection{\texorpdfstring{manageSessions()}{manageSessions()}}
+{\footnotesize\ttfamily void manage\+Sessions (\begin{DoxyParamCaption}\item[{MYSQL $\ast$}]{db,  }\item[{int}]{event\+Id }\end{DoxyParamCaption})}
+
+
+
+Gère les sessions d\textquotesingle{}un événement donné Cette fonction permet à l\textquotesingle{}administrateur de gérer les sessions d\textquotesingle{}un événement donné, notamment en ajoutant et en supprimant des sessions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em db} & L\textquotesingle{}objet de connexion My\+SQL \\
+\hline
+{\em event\+Id} & L\textquotesingle{}identifiant de l\textquotesingle{}événement à gérer\\
+\hline
+\end{DoxyParams}
+Gère les sessions d\textquotesingle{}un événement donné Cette fonction permet à l\textquotesingle{}administrateur de gérer les sessions d\textquotesingle{}un événement donné, notamment en ajoutant et en supprimant des sessions.
+
+
+\begin{DoxyParams}{Parameters}
+{\em db} & Pointer to a MYSQL database connection \\
+\hline
+{\em event\+Id} & Integer representing the id of the event to manage sessions for \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{admin_8h_a5d253add4c386f6f34c8531c9ab71740}\label{admin_8h_a5d253add4c386f6f34c8531c9ab71740}} 
+\index{admin.h@{admin.h}!manageUser@{manageUser}}
+\index{manageUser@{manageUser}!admin.h@{admin.h}}
+\doxysubsubsection{\texorpdfstring{manageUser()}{manageUser()}}
+{\footnotesize\ttfamily void manage\+User (\begin{DoxyParamCaption}\item[{MYSQL $\ast$}]{db }\end{DoxyParamCaption})}
+
+
+
+Gère les utilisateurs Cette fonction permet à l\textquotesingle{}administrateur de gérer les utilisateurs, notamment en les ajoutant et en les supprimant. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em db} & L\textquotesingle{}objet de connexion My\+SQL\\
+\hline
+\end{DoxyParams}
+Gère les utilisateurs Cette fonction permet à l\textquotesingle{}administrateur de gérer les utilisateurs, notamment en les ajoutant et en les supprimant.
+
+
+\begin{DoxyParams}{Parameters}
+{\em db} & Un pointeur vers une structure MYSQL qui représente la base de données \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Aucune valeur de retour 
+\end{DoxyReturn}
